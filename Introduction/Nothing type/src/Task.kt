@@ -1,6 +1,6 @@
 import java.lang.IllegalArgumentException
 
-fun failWithWrongAge(age: Int?)    {
+fun failWithWrongAge(age: Int?): Nothing {
     throw IllegalArgumentException("Wrong age: $age")
 }
 
@@ -10,5 +10,11 @@ fun checkAge(age: Int?) {
 }
 
 fun main() {
-    checkAge(10)
+    checkAge(null)
 }
+
+/*
+* Nothing 처리를 안할 경우
+* IllegalArgumentException 함수 내 $age가 null이 될 수도 있기 때문에 컴파일 자체가 안됨
+*
+* */
